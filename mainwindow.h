@@ -13,7 +13,12 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QLabel>
 #include <QGridLayout>
+#include <QDir>
+#include <QStringList>
+#include <QDirIterator>
+#include <opencv2/opencv.hpp>
 
 
 class MainWindow : public QMainWindow
@@ -31,13 +36,18 @@ private:
     QPushButton *checkpointBtn;
     QLineEdit *checkpointLineEdit;
 
+    QPushButton *imgBtn;
+    QLineEdit *imgLineEdit;
+
     QPushButton *doInferBtn;
     QTextEdit *inferenceEdit;
+    QLabel *_label;
 
     QGridLayout *myLayout;
 
 private slots:
     void showGraphFile();
+    void chooseImage();
     void showCheckpointDir();
     void doInference();
 };
